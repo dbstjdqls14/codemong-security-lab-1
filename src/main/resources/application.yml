@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:securitylab;MODE=MySQL;DATABASE_TO_UPPER=false
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        format_sql: true
+  sql:
+    init:
+      mode: never
+
+jwt:
+  # 학습/테스트용 고정 Secret입니다. 운영 환경에서는 절대 사용하지 말고 안전한 외부 Secret으로 교체하세요.
+  secret: codemong-security-lab-test-secret-key-codemong-security-lab-test-secret-key
+  access-token-validity-ms: 3600000
+  refresh-token-validity-ms: 1209600000
